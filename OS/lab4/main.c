@@ -32,8 +32,6 @@ void show_file_status(char* file)
     	mode[0]='p';//表示管道文件
     if(S_ISLNK(stat_buf.st_mode))
     	mode[0]='l';//表示链接文件
-    else
-    mode[0]='-';
     //判断USR文件所有者权限
     if(stat_buf.st_mode&S_IRUSR)
     	mode[1]='r';//可读
