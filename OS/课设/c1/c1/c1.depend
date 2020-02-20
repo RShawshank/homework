@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1582097731 source:/home/rao/c1/c1/main_copy.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<dirent.h>
+	<sys/stat.h>
+	<sys/types.h>
+	<fcntl.h>
+
