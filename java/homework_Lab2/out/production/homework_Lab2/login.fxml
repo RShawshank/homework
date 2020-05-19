@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.*?>
+
+<SplitPane dividerPositions="0.260752688172043" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="374.0" prefWidth="546.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginController">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="116.0" prefWidth="544.0">
+            <children>
+                <Label layoutX="188.0" layoutY="21.0" text="登录系统">
+                    <font>
+                        <Font name="Bell MT" size="42.0" />
+                    </font>
+                </Label>
+            </children></AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="238.0" prefWidth="544.0">
+            <children>
+                <AnchorPane layoutY="1.0" prefHeight="240.0" prefWidth="540.0">
+                    <children>
+                        <Button fx:id="loginButton" layoutX="118.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#onLoginClick" prefHeight="36.0" prefWidth="288.0" text="登入" />
+                        <TextField fx:id="usernameField" layoutX="120.0" layoutY="45.0" prefHeight="36.0" prefWidth="288.0" promptText="请输入用户编号" />
+                        <PasswordField fx:id="passwordField" layoutX="120.0" layoutY="94.0" prefHeight="36.0" prefWidth="288.0" promptText="请输入密码" />
+                        <ChoiceBox fx:id="loginType" layoutX="182.0" layoutY="144.0" prefHeight="36.0" prefWidth="224.0" value="患者">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="患者" />
+                                    <String fx:value="医生" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                        <Label layoutX="119.0" layoutY="144.0" prefHeight="36.0" prefWidth="97.0" text="登录身份" textAlignment="CENTER" />
+                    </children>
+                </AnchorPane>
+            </children></AnchorPane>
+    </items>
+</SplitPane>

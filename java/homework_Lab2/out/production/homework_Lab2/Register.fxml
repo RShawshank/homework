@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+
+<SplitPane dividerPositions="0.15829145728643215" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="396.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RegisterController">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="106.0" prefWidth="631.0">
+            <children>
+                <Label fx:id="welcomeLabel" layoutX="28.0" layoutY="16.0" prefHeight="28.0" prefWidth="547.0" text="门 诊 挂 号" textFill="#5c0a41">
+                    <font>
+                        <Font name="Arial" size="12.0" />
+                    </font>
+                </Label>
+            </children></AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="588.0">
+            <children>
+                <Label layoutX="31.0" layoutY="64.0" text="号种类别" AnchorPane.bottomAnchor="247.0" AnchorPane.leftAnchor="31.0">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="309.0" layoutY="64.0" text="号种名称" AnchorPane.bottomAnchor="247.0" AnchorPane.rightAnchor="248.0">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="registerName_Field" disable="true" layoutX="376.0" layoutY="58.0" prefHeight="30.0" prefWidth="227.0" AnchorPane.bottomAnchor="240.0" AnchorPane.rightAnchor="14.0" />
+                <Label layoutX="312.0" layoutY="118.0" text="应缴金额" AnchorPane.bottomAnchor="193.0" AnchorPane.rightAnchor="245.0">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="amountPayable_Field" disable="true" editable="false" layoutX="376.0" layoutY="111.0" prefHeight="30.0" prefWidth="227.0" AnchorPane.bottomAnchor="187.0" AnchorPane.rightAnchor="14.0" />
+                <Label layoutX="31.0" layoutY="117.0" text="交款金额" AnchorPane.bottomAnchor="194.0" AnchorPane.leftAnchor="31.0">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="change_Field" disable="true" editable="false" layoutX="97.0" layoutY="166.0" AnchorPane.bottomAnchor="132.0" AnchorPane.leftAnchor="97.0" />
+                <Label layoutX="31.0" layoutY="172.0" text="找零金额" AnchorPane.bottomAnchor="139.0" AnchorPane.leftAnchor="31.0">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="312.0" layoutY="173.0" text="挂号号码" AnchorPane.bottomAnchor="139.0" AnchorPane.rightAnchor="245.0">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="registerId_Field" disable="true" editable="false" layoutX="376.0" layoutY="167.0" prefHeight="30.0" prefWidth="227.0" AnchorPane.bottomAnchor="131.0" AnchorPane.rightAnchor="14.0" />
+                <Label layoutX="31.0" layoutY="14.0" text="科室名称" AnchorPane.bottomAnchor="297.0" AnchorPane.leftAnchor="31.0">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="department_Field" layoutX="97.0" layoutY="8.0" AnchorPane.bottomAnchor="290.0" AnchorPane.leftAnchor="97.0" />
+                <Label layoutX="312.0" layoutY="14.0" text="医生姓名" AnchorPane.bottomAnchor="297.0" AnchorPane.rightAnchor="245.0">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="doctorName_Field" layoutX="376.0" layoutY="8.0" prefHeight="30.0" prefWidth="227.0" AnchorPane.bottomAnchor="290.0" AnchorPane.rightAnchor="14.0" />
+                <Button fx:id="confirmButton" layoutX="134.0" layoutY="249.0" mnemonicParsing="false" onMouseClicked="#onConfirmButtonClick" text="确定" AnchorPane.bottomAnchor="49.0">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+                <Button fx:id="clearlearButton" layoutX="249.0" layoutY="249.0" mnemonicParsing="false" onMouseClicked="#onClearButtonClick" text="清除" AnchorPane.bottomAnchor="49.0">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+                <ChoiceBox fx:id="registerType_Field" disable="true" layoutX="97.0" layoutY="58.0" prefHeight="30.0" prefWidth="124.0" >
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="普通号" />
+                            <String fx:value="专家号" />
+                        </FXCollections>
+                    </items>
+                </ChoiceBox>
+                <TextField fx:id="paymentAmount_Field" disable="true" layoutX="97.0" layoutY="111.0" />
+                <Button fx:id="exitButton" layoutX="369.0" layoutY="249.0" mnemonicParsing="false" onMouseClicked="#onExitButtonClick" text="退出">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children></AnchorPane>
+    </items>
+</SplitPane>
