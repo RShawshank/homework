@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane fx:id="split_login" dividerPositions="0.15829145728643215" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginController">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <children>
+                <Label fx:id="logintitle" layoutX="221.0" layoutY="17.0" prefHeight="42.0" prefWidth="203.0" text="租 车 系 统">
+                    <font>
+                        <Font name="Arial Bold" size="36.0" />
+                    </font>
+                </Label>
+            </children></AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="160.0">
+            <children>
+                <Button fx:id="loginButton" layoutX="289.0" layoutY="249.0" mnemonicParsing="false" onAction="#onLoginClick" prefHeight="42.0" prefWidth="93.0" text="登录">
+                </Button>
+                <Label fx:id="label_account" layoutX="146.0" layoutY="99.0" text="账号">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="label_pass" layoutX="146.0" layoutY="158.0" text="密码">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </Label>
+                <PasswordField fx:id="text_password" layoutX="198.0" layoutY="152.0" prefHeight="28.0" prefWidth="274.0" />
+                <ComboBox fx:id="Combo_account" layoutX="198.0" layoutY="94.0" prefHeight="28.0" prefWidth="274.0" />
+                <TitledPane animated="false" layoutX="45.0" layoutY="-31.0" text="untitled" />
+                <Label fx:id="label_account1" layoutX="117.0" layoutY="38.0" text="登录类型">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="Combo_type" layoutX="198.0" layoutY="34.0" prefHeight="28.0" prefWidth="274.0" />
+            </children></AnchorPane>
+    </items>
+</SplitPane>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane fx:id="split_login" dividerPositions="0.15829145728643215" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#getpersoninfo" orientation="VERTICAL" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CustomerController">
+
+<items>
+    <AnchorPane fx:id="anchorpane_up" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+        <children>
+            <Label fx:id="label_title" layoutX="119.0" layoutY="13.0" prefHeight="27.0" prefWidth="425.0" text="顾客登陆系统">
+                <font>
+                    <Font name="Arial" size="24.0" />
+                </font>
+            </Label>
+        </children></AnchorPane>
+    <AnchorPane fx:id="anchorpane_down" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+        <children>
+            <TabPane fx:id="tabpane_reg" layoutY="1.0" prefHeight="400.0" prefWidth="598.0" tabClosingPolicy="UNAVAILABLE">
+                <tabs>
+                    <Tab fx:id="tab_personalinformation" text="个人信息">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <Button fx:id="btn_exit1" layoutX="260.0" layoutY="250.0" mnemonicParsing="false" onAction="#onExitClick" text="退出">
+
+                                    </Button>
+                                    <TableView fx:id="table_personainfo" prefHeight="200.0" prefWidth="598.0">
+                                        <columns>
+                                            <TableColumn fx:id="person_id" prefWidth="80.0" text="顾客ID号" />
+                                            <TableColumn fx:id="person_cname" editable="false" prefWidth="130.0" text="顾客姓名" />
+                                            <TableColumn fx:id="person_member" prefWidth="80.0" text="是否会员" />
+                                            <TableColumn fx:id="person_moral" prefWidth="128.0" text="信誉等级" />
+                                            <TableColumn fx:id="person_dlrq" prefWidth="182.0" text="登陆时间" />
+                                        </columns>
+                                    </TableView>
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </Tab>
+                    <Tab fx:id="tab_reg" text="租车">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <Button fx:id="btn_ok" layoutX="117.0" layoutY="250.0" mnemonicParsing="false" onAction="#onComfirmClick" text="确定">
+                                        <font>
+                                            <Font name="System Bold" size="15.0" />
+                                        </font>
+                                    </Button>
+                                    <Button fx:id="btn_clear" layoutX="250.0" layoutY="250.0" mnemonicParsing="false" onAction="#onClearClick" text="清除">
+                                        <font>
+                                            <Font name="System Bold" size="15.0" />
+                                        </font>
+                                    </Button>
+                                    <Button fx:id="btn_exit" layoutX="407.0" layoutY="250.0" mnemonicParsing="false" onAction="#onExitClick" text="退出">
+                                        <font>
+                                            <Font name="System Bold" size="15.0" />
+                                        </font>
+                                    </Button>
+                                    <Label fx:id="label_brand" layoutX="15.0" layoutY="34.0" text="汽车品牌">
+                                        <font>
+                                            <Font name="Arial Bold" size="15.0" />
+                                        </font>
+                                    </Label>
+
+                                    <Label fx:id="label_id" layoutX="300.0" layoutY="34.0" text="汽车牌号">
+                                        <font>
+                                            <Font name="Arial Bold" size="15.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="label_rent" layoutX="15.0" layoutY="94.0" text="汽车租金">
+                                        <font>
+                                            <Font name="Arial Bold" size="15.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="label_pledge" layoutX="300.0" layoutY="94.0" text="汽车押金">
+                                        <font>
+                                            <Font name="Arial Bold" size="15.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="label_statu" layoutX="15.0" layoutY="156.0" text="车况等级">
+                                        <font>
+                                            <Font name="Arial Bold" size="15.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="label_sname" layoutX="300.0" layoutY="156.0" text="经手员工">
+                                        <font>
+                                            <Font name="Arial Bold" size="15.0" />
+                                        </font>
+                                    </Label>
+                                    <ComboBox fx:id="combo_brand" layoutX="85.0" layoutY="21.0" prefHeight="42.0" prefWidth="100.0" />
+                                    <ComboBox fx:id="combo_id" layoutX="370.0" layoutY="21.0" prefHeight="42.0" prefWidth="100.0" />
+                                    <ComboBox fx:id="combo_rent" layoutX="85.0" layoutY="80.0" prefHeight="43.0" prefWidth="100.0" />
+                                    <ComboBox fx:id="combo_pledge" layoutX="370.0" layoutY="82.0" prefHeight="41.0" prefWidth="100.0" />
+                                    <ComboBox fx:id="combo_statu" layoutX="85.0" layoutY="144.0" prefHeight="40.0" prefWidth="100.0" />
+                                    <ComboBox fx:id="combo_sname" layoutX="370.0" layoutY="143.0" prefHeight="43.0" prefWidth="100.0" />
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </Tab>
+                    <Tab fx:id="tab_reutn" onSelectionChanged="#returnCar" text="还车">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                               <children>
+                                   <Button fx:id="btn_ok3" layoutX="207.0" layoutY="250.0" mnemonicParsing="false" onAction="#onReturncarClick" text="还车">
+                                </Button>
+                                   <Button fx:id="btn_exit2" layoutX="332.0" layoutY="250.0" mnemonicParsing="false" onAction="#onExitClick" text="退出">
+
+                                </Button>
+                                   <TableView fx:id="tableCustomerReturnCar" prefHeight="200.0" prefWidth="598.0">
+                                       <columns>
+                                           <TableColumn fx:id="car_id" prefWidth="100.0" text="汽车ID" />
+                                           <TableColumn fx:id="car_brand" editable="false" prefWidth="103.0" text="汽车品牌" />
+                                           <TableColumn fx:id="car_status" prefWidth="91.0" text="车况" />
+                                           <TableColumn fx:id="car_rent" prefWidth="96.0" text="租金" />
+                                           <TableColumn fx:id="car_pledge" prefWidth="81.0" text="押金" />
+                                           <TableColumn fx:id="car_valid" prefWidth="129.0" text="是否占用" />
+                                       </columns>
+                                   </TableView>
+                               </children>
+                            </AnchorPane>
+                        </content>
+                    </Tab>
+                </tabs>
+            </TabPane>
+        </children>
+    </AnchorPane>
+</items>
+</SplitPane>

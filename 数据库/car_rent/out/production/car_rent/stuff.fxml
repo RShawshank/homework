@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.chart.BarChart?>
+
+<SplitPane fx:id="split_login" dividerPositions="0.15829145728643215" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="580.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StuffController">
+
+    <items>
+        <AnchorPane fx:id="anchorpane_up" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="750.0">
+           <children>
+               <Label fx:id="label_title" layoutX="262.0" layoutY="34.0" text="租车行内部系统">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+           </children>
+        </AnchorPane>
+        <AnchorPane fx:id="anchorpane_down" minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="750.0">
+           <children>
+               <TabPane fx:id="tabpane_reg" layoutY="1.0" prefHeight="580.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE">
+                   <tabs>
+                       <Tab fx:id="tab_carinfo" onSelectionChanged="#show_carinfo" text="车辆信息">
+                           <content>
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="750.0">
+                                   <children>
+                                       <Button fx:id="btn_exit" layoutX="570.0" layoutY="380.0" onAction="#onExitClick" text="退出" />
+                                       <Button fx:id="btn_deletecar" layoutX="345" layoutY="380.0" onAction="#onCarDeleteClick" text="删除" />
+                                       <Button fx:id="add_car" layoutX="560.0" layoutY="260.0" onAction="#onCarAddClick" text="添加" />
+                                       <TextField fx:id="add_carid" layoutY="260.0" prefHeight="30" prefWidth="100" />
+                                       <TextField fx:id="add_carbrand" layoutX="100.0" layoutY="260.0" prefHeight="30" prefWidth="120" />
+                                       <TextField fx:id="add_carstatus" layoutX="220.0" layoutY="260.0" prefHeight="30" prefWidth="100" />
+                                       <TextField fx:id="add_carrent" layoutX="320.0" layoutY="260.0" prefHeight="30" prefWidth="120" />
+                                       <TextField fx:id="add_carpledge" layoutX="440.0" layoutY="260.0" prefHeight="30" prefWidth="120" />
+                                       <TableView fx:id="table_car" editable="true" prefHeight="250.0" prefWidth="750.0">
+                                           <columns>
+                                               <TableColumn fx:id="stuff_carid" editable="true" prefWidth="100.0" text="汽车ID" />
+                                               <TableColumn fx:id="stuff_carbrand" editable="true" prefWidth="120.0" text="汽车品牌" />
+                                               <TableColumn fx:id="stuff_carstatus" editable="true" prefWidth="100.0" text="汽车状态" />
+                                               <TableColumn fx:id="stuff_carrent" editable="true" prefWidth="120.0" text="汽车租金" />
+                                               <TableColumn fx:id="stuff_carpledge" editable="true" prefWidth="120.0" text="汽车押金" />
+                                               <TableColumn fx:id="stuff_carvalid" editable="false" prefWidth="120.0" text="租借情况" />
+                                           </columns>
+                                       </TableView>
+   
+                                   </children>
+                               </AnchorPane>
+                           </content>
+                       </Tab>
+                       <Tab fx:id="tab_customerinfo" onSelectionChanged="#show_customerinfo" text="客户信息">
+                           <content>
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="750.0">
+                                   <children>
+                                       <Button fx:id="btn_exit1" layoutX="470.0" layoutY="380.0" onAction="#onExitClick" text="退出" />
+                                       <Button fx:id="btn_delete11" layoutX="155.0" layoutY="380.0" onAction="#onCustomerDeleteClick" text="删除客户信息" />
+                                       <Button fx:id="add_cm" layoutX="635.0" layoutY="310.0" onAction="#onCustomerAddClick" prefHeight="30.0" prefWidth="111.0" text="添加客户信息" />
+                                       <TableView fx:id="table_customer" editable="true" layoutX="-2.0" layoutY="2.0" prefHeight="309.0" prefWidth="750.0">
+                                           <columns>
+                                               <TableColumn fx:id="stuff_cusid" editable="true" prefWidth="123.0" sortType="DESCENDING" text="客户ID" />
+                                               <TableColumn fx:id="stuff_cusname" editable="true" prefWidth="138.0" text="客户名" />
+                                               <TableColumn fx:id="stuff_cuspasswd" editable="true" prefWidth="98.0" text="登录密码" />
+                                               <TableColumn fx:id="stuff_cusmoral" editable="true" prefWidth="162.0" text="信誉评级" />
+                                                <TableColumn fx:id="stuff_cusmember" editable="true" prefWidth="113.0" text="是否会员" />
+                                           </columns>
+                                       </TableView>
+                                       <TextField fx:id="add_cmid" layoutY="310.0" prefHeight="30" prefWidth="124.0" />
+                                       <TextField fx:id="add_cmname" layoutX="124.0" layoutY="310.0" prefHeight="30" prefWidth="141.0" />
+                                       <TextField fx:id="add_cmpasswd" layoutX="260.0" layoutY="310.0" prefHeight="30" prefWidth="105.0" />
+                              <TextField fx:id="add_cmoral" layoutX="357.0" layoutY="310.0" prefHeight="30" prefWidth="170.0" />
+                              <TextField fx:id="add_cmember" layoutX="521.0" layoutY="310.0" prefHeight="30" prefWidth="115.0" />
+                                   </children>
+                               </AnchorPane>
+                           </content>
+                       </Tab>
+                       <Tab fx:id="tab_stuffinfo" onSelectionChanged="#show_stuffinfo" text="员工信息">
+                           <content>
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="750.0">
+                                   <children>
+                                       <Button fx:id="btn_exit3" layoutX="470.0" layoutY="380.0" onAction="#onExitClick" text="退出" />
+                                       <Button fx:id="btn_stuffdelete" layoutX="320.0" layoutY="380.0" onAction="#onStuffDeleteClick" text="删除员工" />
+                                       <Button fx:id="btn_stuffadd" layoutX="420.0" layoutY="260.0" onAction="#onStuffAddClick" text="添加员工" />
+                                       <TableView fx:id="table_stuff" editable="true" prefHeight="250.0" prefWidth="750.0">
+                                           <columns>
+                                               <TableColumn fx:id="stuffid" editable="true" prefWidth="100.0" text="员工ID" />
+                                               <TableColumn fx:id="stuffname" editable="true" prefWidth="120.0" text="员工姓名" />
+                                               <TableColumn fx:id="stufftitle" editable="true" prefWidth="100.0" text="员工级别" />
+                                               <TableColumn fx:id="stuffpasswd" editable="true" prefWidth="100.0" text="员工密码" />
+                                           </columns>
+                                       </TableView>
+                                       <TextField fx:id="add_smid" layoutY="260.0" prefHeight="30" prefWidth="100" />
+                                       <TextField fx:id="add_smname" layoutX="100.0" layoutY="260.0" prefHeight="30" prefWidth="120" />
+                                       <TextField fx:id="add_smtitle" layoutX="220.0" layoutY="260.0" prefHeight="30" prefWidth="100" />
+                                         <TextField fx:id="add_smpasswd" layoutX="320.0" layoutY="260.0" prefHeight="30" prefWidth="100" />
+                                   </children>
+                               </AnchorPane>
+                           </content>
+                       </Tab>
+                       <Tab fx:id="tab_diaryinfo" onSelectionChanged="#show_diaryinfo" text="日志记录">
+                           <content>
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="377.0" prefWidth="626.0">
+                                   <children>
+                                       <Button fx:id="btn_exit4" layoutX="250.0" layoutY="380.0" onAction="#onExitClick" text="退出" />
+                                       <Button fx:id="add_diary" layoutX="450.0" layoutY="380.0" onAction="#onDiaryAddClick" text="添加" />
+                                       <Button fx:id="delete_diary" layoutX="650.0" layoutY="380.0" onAction="#onDiaryDeleteClick" text="删除" />
+                                       <TableView fx:id="table_diary" editable="true" layoutX="-1.0" prefHeight="275.0" prefWidth="702.0">
+                                           <columns>
+                                               <TableColumn fx:id="stuff_did" editable="true" prefWidth="100.0" text="日志编号" />
+                                               <TableColumn fx:id="stuff_dcarid" editable="true" prefWidth="100.0" text="汽车ID" />
+                                               <TableColumn fx:id="stuff_dcusid" editable="true" prefWidth="100.0" text="顾客ID" />
+                                               <TableColumn fx:id="stuff_dstuffid" editable="true" prefWidth="100.0" text="经手人ID" />
+                                               <TableColumn fx:id="stuff_dtime" editable="true" prefWidth="100.0" text="发生时间" />
+                                               <TableColumn fx:id="stuff_devent" editable="true" prefWidth="100.0" text="归还" />
+                                               <TableColumn fx:id="stuff_dcost" editable="true" prefWidth="100.0" text="交易金额" />
+                                           </columns>
+                                       </TableView>
+                                       <TextField fx:id="add_did" layoutY="275.0" prefHeight="30" prefWidth="100" />
+                                       <TextField fx:id="add_dcarid" layoutX="99.0" layoutY="275.0" prefHeight="30" prefWidth="100" />
+                                       <TextField fx:id="add_dcusid" layoutX="199.0" layoutY="275.0" prefHeight="30" prefWidth="100" />
+                                       <TextField fx:id="add_dstuffid" layoutX="300.0" layoutY="275.0" prefHeight="30" prefWidth="100" />
+                                       <TextField fx:id="add_dtime" layoutX="400.0" layoutY="275.0" prefHeight="30" prefWidth="100" />
+                                       <TextField fx:id="add_devent" layoutX="500.0" layoutY="275.0" prefHeight="30" prefWidth="100" />
+                                       <TextField fx:id="add_dcost" layoutX="600.0" layoutY="275.0" prefHeight="30" prefWidth="100" />
+                                   </children>
+                               </AnchorPane>
+                           </content>
+                       </Tab>
+                       <Tab fx:id="tab_chart" onSelectionChanged="#show_tableinfo" text="报表显示">
+                           <content>
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="750.0" stylesheets="stuff.css">
+                                   <children>
+                                       <PieChart id="pieChart" fx:id="pieChart" layoutX="30" layoutY="0" prefHeight="400" prefWidth="500" />
+                                       <Button fx:id="BATCHAR_YEAR" layoutX="600" layoutY="80.0" mnemonicParsing="false" onAction="#get_year" text="年度报表" />
+                                       <Button fx:id="BATCHAR_season" layoutX="600" layoutY="130.0" mnemonicParsing="false" onAction="#get_season" text="季度报表" />
+                                       <PieChart id="getyear" fx:id="get_year" layoutX="30" layoutY="0" prefHeight="400" prefWidth="500" />
+                                       <PieChart id="getseason" fx:id="get_season" layoutX="30" layoutY="0" />
+                                   </children>
+                               </AnchorPane>
+                           </content>
+                      </Tab>
+                  </tabs>
+              </TabPane>
+          </children>
+       </AnchorPane>
+   </items>
+</SplitPane>

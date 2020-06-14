@@ -1,0 +1,58 @@
+.root{
+    display:block;
+}
+.root{
+    -fx-font-family: "微软雅黑";
+    -fx-background-size: stretch stretch;
+    -fx-background-position: center center;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.button:hover {
+    -fx-background-color: lightskyblue;
+}
+#pieChart
+.default-color0.chart-pie {
+    -fx-pie-color: #dd3a2e;
+}
+
+.default-color1.chart-pie {
+    -fx-pie-color: #ff9e2c;
+}
+
+.default-color2.chart-pie {
+    -fx-pie-color: #ffdd40;
+}
+
+.default-color3.chart-pie {
+    -fx-pie-color: #9abd57;
+}
+
+.default-color4.chart-pie {
+    -fx-pie-color: #2bc9f7;
+}
+
+.default-color5.chart-pie {
+    -fx-pie-color: #1cabbb;
+}
+
+.default-color6.chart-pie {
+    -fx-pie-color: #2b73f7;
+}
+
+.default-color7.chart-pie {
+    -fx-pie-color: #9760f1;
+}
+
+.root {
+    -fx-font-family: "微软雅黑";
+    -fx-background-size: stretch stretch;
+    -fx-background-position: center center;
+}
