@@ -65,7 +65,7 @@ public class DBConnector {
         Class.forName() 方法要求JVM查找并加载指定的类到内存中；
          */
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             System.out.println("找不到驱动类，加载失败！");
             e.printStackTrace();
@@ -81,7 +81,7 @@ public class DBConnector {
 
     //创建数据库的连接
     public void connectionDatabase(String hostname, String DBname, Integer port, String username, String password) throws SQLException {
-        String url = "jdbc:mysql://" + hostname + ":" + port + "/" + DBname + "?zeroDateTimeBehavior=convertToNull&autoReconnect=true&characterEncoding=UTF-8&characterSetResults=UTF-8";
+        String url = "jdbc:mysql://" + hostname + ":" + port + "/" + DBname + "?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         connection = DriverManager.getConnection(url, username, password);
     }
 
@@ -586,13 +586,13 @@ public class DBConnector {
             JOptionPane.showMessageDialog(null,"此时汽车正在租车或还车阶段，无法删除日志！");
             return;
         }
-        String sql="delete from rentdiary where id = ?";
+        String sql="delete from rentdiary where infoid = ?";
         Pstatement=connection.prepareStatement(sql);
         Pstatement.setInt(1,Integer.parseInt(infoid));
         Pstatement.execute();
     }
     public void addDiaryinfo(String infoid,String cusid,String stuffid,String carid,String time,String event,String cost) throws SQLException {
-        String sql="select * from rentdiary where id =?";
+        String sql="select * from rentdiary where infoid =?";
         Pstatement=connection.prepareStatement(sql);
         Pstatement.setInt(1,Integer.parseInt(infoid));
         ResultSet resultSet=Pstatement.executeQuery();
@@ -646,7 +646,8 @@ public class DBConnector {
         }
         return list;
     }
-    public ObservableList getprofitinfo(ObservableList list) throws SQLException {
+    public ObservableList getprofitinfo() throws SQLException {
+        ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
         String sql="select BRAND,COUNT(BRAND) AS NUM FROM CARINFO GROUP BY BRAND";
         Pstatement=connection.prepareStatement(sql);
         ResultSet resultSet=Pstatement.executeQuery();
@@ -655,6 +656,12 @@ public class DBConnector {
             list.add(new PieChart.Data(resultSet.getString("brand"),resultSet.getInt("NUM")));
         }
         return list;
+    }
+    public double getprofitall() throws SQLException {
+        String sql="select sum(pprofit) AS NUM FROM profit";
+        Pstatement=connection.prepareStatement(sql);
+        ResultSet resultSet=Pstatement.executeQuery();
+        return resultSet.getDouble("NUM");
     }
 
 }

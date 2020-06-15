@@ -29,6 +29,8 @@ public class StuffController implements Initializable {
     @FXML
     Label label_title;
     @FXML
+    TextField add_cmember1,add_cmember2,add_cmember3,add_cmember4,add_cmember5;
+    @FXML
     private TableColumn<StuffCar,String>stuff_carid,stuff_carbrand,stuff_carstatus,stuff_carrent,stuff_carpledge,stuff_carvalid;
     @FXML
     private TableColumn<StuffCustomer,String>stuff_cusid,stuff_cuspasswd,stuff_cusname,stuff_cusmoral,stuff_cusmember;
@@ -75,6 +77,11 @@ public class StuffController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         connector= DBConnector.getInstance();
         label_title.setText("欢迎，"+stuff_name+"登录！租车系统");
+        try {
+            this.show_carinfo();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         return;
     }
     @FXML
@@ -296,13 +303,13 @@ public class StuffController implements Initializable {
         StuffDiarylist.clear();
         StuffDiarylist=connector.getAlldirayinfo(StuffDiarylist);
         table_diary.setItems(StuffDiarylist);
-        add_did.setPromptText("日志ID");
-        add_dcarid.setPromptText("汽车ID");
-        add_dcusid.setPromptText("顾客ID");
-        add_dstuffid.setPromptText("员工ID");
-        add_dtime.setPromptText("日期");
-        add_devent.setPromptText("事件（是否归还）");
-        add_dcost.setPromptText("交易金额");
+//        add_did.setPromptText("日志ID");
+  //      add_dcarid.setPromptText("汽车ID");
+     //   add_dcusid.setPromptText("顾客ID");
+       // add_dstuffid.setPromptText("员工ID");
+        //add_dtime.setPromptText("日期");
+        //add_devent.setPromptText("事件（是否归还）");
+        //add_dcost.setPromptText("交易金额");
     }
     @FXML
     public void onDiaryDeleteClick() throws SQLException {
@@ -343,9 +350,9 @@ public class StuffController implements Initializable {
     public void show_tableinfo() throws SQLException {
         pieChartData.clear();
         pieChart.getData().clear();
-        pieChartData = connector.getprofitinfo(pieChartData);
+        pieChartData = connector.getprofitinfo();
         pieChart.setData(pieChartData);
-        pieChart.setTitle("类别分类饼状图");
+        pieChart.setTitle("汽车类别分类饼状图");
         pieChart.setClockwise(true);
         pieChart.setLabelLineLength(50);
         pieChart.setLabelsVisible(true);
@@ -376,6 +383,7 @@ public class StuffController implements Initializable {
         pieChartData=connector.getprofit_year(pieChartData);
         pieChart.setData(pieChartData);
         pieChart.setTitle("年度盈利额");
+        add_cmember1.setText(String.valueOf(connector.getprofitall()));
         pieChart.setClockwise(true);
         pieChart.setLabelLineLength(50);
         pieChart.setLabelsVisible(true);
@@ -388,9 +396,13 @@ public class StuffController implements Initializable {
         if(pieChart!=null)
         pieChart.getData().clear();
         pieChartData.add(new PieChart.Data("第一季度",num[0]));
+        add_cmember2.setText(String.valueOf(num[0]));
         pieChartData.add(new PieChart.Data("第二季度",num[1]));
+        add_cmember3.setText(String.valueOf(num[1]));
         pieChartData.add(new PieChart.Data("第三季度",num[2]));
+        add_cmember4.setText(String.valueOf(num[2]));
         pieChartData.add(new PieChart.Data("第四季度",num[3]));
+        add_cmember5.setText(String.valueOf(num[3]));
         int i=0;
         for (PieChart.Data data : pieChartData) {
             data.getNode().setStyle(

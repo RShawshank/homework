@@ -105,8 +105,6 @@
                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="377.0" prefWidth="626.0">
                                    <children>
                                        <Button fx:id="btn_exit4" layoutX="250.0" layoutY="380.0" onAction="#onExitClick" text="退出" />
-                                       <Button fx:id="add_diary" layoutX="450.0" layoutY="380.0" onAction="#onDiaryAddClick" text="添加" />
-                                       <Button fx:id="delete_diary" layoutX="650.0" layoutY="380.0" onAction="#onDiaryDeleteClick" text="删除" />
                                        <TableView fx:id="table_diary" editable="true" layoutX="-1.0" prefHeight="275.0" prefWidth="702.0">
                                            <columns>
                                                <TableColumn fx:id="stuff_did" editable="true" prefWidth="100.0" text="日志编号" />
@@ -118,13 +116,6 @@
                                                <TableColumn fx:id="stuff_dcost" editable="true" prefWidth="100.0" text="交易金额" />
                                            </columns>
                                        </TableView>
-                                       <TextField fx:id="add_did" layoutY="275.0" prefHeight="30" prefWidth="100" />
-                                       <TextField fx:id="add_dcarid" layoutX="99.0" layoutY="275.0" prefHeight="30" prefWidth="100" />
-                                       <TextField fx:id="add_dcusid" layoutX="199.0" layoutY="275.0" prefHeight="30" prefWidth="100" />
-                                       <TextField fx:id="add_dstuffid" layoutX="300.0" layoutY="275.0" prefHeight="30" prefWidth="100" />
-                                       <TextField fx:id="add_dtime" layoutX="400.0" layoutY="275.0" prefHeight="30" prefWidth="100" />
-                                       <TextField fx:id="add_devent" layoutX="500.0" layoutY="275.0" prefHeight="30" prefWidth="100" />
-                                       <TextField fx:id="add_dcost" layoutX="600.0" layoutY="275.0" prefHeight="30" prefWidth="100" />
                                    </children>
                                </AnchorPane>
                            </content>
@@ -134,10 +125,40 @@
                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="750.0" stylesheets="stuff.css">
                                    <children>
                                        <PieChart id="pieChart" fx:id="pieChart" layoutX="30" layoutY="0" prefHeight="400" prefWidth="500" />
-                                       <Button fx:id="BATCHAR_YEAR" layoutX="600" layoutY="80.0" mnemonicParsing="false" onAction="#get_year" text="年度报表" />
-                                       <Button fx:id="BATCHAR_season" layoutX="600" layoutY="130.0" mnemonicParsing="false" onAction="#get_season" text="季度报表" />
+                                       <Button fx:id="BATCHAR_YEAR" layoutX="522.0" layoutY="20.0" mnemonicParsing="false" onAction="#get_year" text="年度报表" />
+                                       <Button fx:id="BATCHAR_season" layoutX="633.0" layoutY="20.0" mnemonicParsing="false" onAction="#get_season" text="季度报表" />
                                        <PieChart id="getyear" fx:id="get_year" layoutX="30" layoutY="0" prefHeight="400" prefWidth="500" />
                                        <PieChart id="getseason" fx:id="get_season" layoutX="30" layoutY="0" />
+                              <TextField fx:id="add_cmember1" layoutX="616.0" layoutY="82.0" prefHeight="30" prefWidth="115.0" promptText="年度收入" />
+                              <TextField fx:id="add_cmember2" layoutX="616.0" layoutY="214.0" prefHeight="30" prefWidth="115.0" promptText="第一季度收入" />
+                              <TextField fx:id="add_cmember3" layoutX="616.0" layoutY="159.0" prefHeight="30" prefWidth="115.0" promptText="第二季度收入" />
+                              <TextField fx:id="add_cmember4" layoutX="616.0" layoutY="328.0" prefHeight="30" prefWidth="115.0" promptText="第三季度收入" />
+                              <TextField fx:id="add_cmember5" layoutX="616.0" layoutY="271.0" prefHeight="30" prefWidth="115.0" promptText="第四季度收入" />
+                              <Label fx:id="label_title1" layoutX="554.0" layoutY="90.0" text="全部收入">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label_title11" layoutX="542.0" layoutY="167.0" text="第一季度收入">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label_title111" layoutX="542.0" layoutY="222.0" text="第二季度收入">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label_title112" layoutX="542.0" layoutY="279.0" text="第三季度收入">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label_title113" layoutX="542.0" layoutY="336.0" text="第四季度收入">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
                                    </children>
                                </AnchorPane>
                            </content>
